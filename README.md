@@ -27,7 +27,7 @@ Some query fns return more than one element, and some return just one.  Sometime
 (ns my.ns
   (:require [stch.dom :as dom])
 
-(-> (dom/by-id "page-title"
+(-> (dom/sel "h1")
     (dom/set-html "New Title")
     (dom/listen :click (fn [e])))
 
@@ -35,7 +35,7 @@ Some query fns return more than one element, and some return just one.  Sometime
     (dom/add-class "highlight")
     (dom/remove-class "muted"))
 
-(-> (dom/by-id "not-found-id"
+(-> (dom/by-id "not-found-id")
     (dom/set-html "Something Different"))
 ```
 
